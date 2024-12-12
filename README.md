@@ -81,7 +81,8 @@ __g 1791__<br>
 <br>
 
 SMS __The Fantastic Adventures of Dizzy__ (https://spectrumcomputing.co.uk/forums/viewtopic.php?t=1932)<br>
-this game assembles with PDS/2 for Z80 __P2Z80.EXE__ which was kindly provided in the same archive as the source code<br>
+this game assembles with PDS/2 for Z80 __P2Z80.EXE__ which was kindly provided in the same archive<br>
+as the source code<br>
 - replace all instances of __C:\SEGA8BIT\BIGDIZZY\\__ in __FANTSEGA.PRJ__ with nothing, to get relative paths
 - search for __incbin__ in source files and, like above, replace all __C:\SEGA8BIT\BIGDIZZY\\__ paths with nothing<br>
 this should affect 2 .dat files and 15 .inc files<br>
@@ -156,7 +157,8 @@ __copy BZDFNS.PDS +BZFRST.PDS +BZFRGR.PDS 0.PDS__<br>
 - now let's create a FF pattern filled 64kb overlay file<br>
 __sfk make-zero-file bank 0x10000__<br>
 __sfk rep bank -yes -binary /00000000/ffffffff/__<br>
-- in __0.PDS__ set __ROMCODE__ to __1__, __TESTSTUFF__ to __0__ and replace __SEND ROMFILE,TANK.ROM,128__ with __SEND COMPUTER1__
+- in __0.PDS__ set __ROMCODE__ to __1__, __TESTSTUFF__ to __0__ and replace __SEND ROMFILE,TANK.ROM,128__ with<br>
+__SEND COMPUTER1__
 - in __0.PDS__, where __BZFRST.PDS__ would end (after __noobj equ (*-OBJDEF)/16__) add<br>
 &emsp;__include	BZMACR.PDS__<br>
 - compile the game and then process two output files like so<br>
@@ -176,8 +178,10 @@ NES __Elite__ (http://www.elitehomepage.org/archive/index.htm)<br>
 same as with the __NES Tank Game__ this is a PDS/2 project so we should take care to downconvert it to PDS<br>
 PDS can load up to 8 files of a limited size; loops can not be used in include files; includes can not be nested<br>
 - first move all .PDS files from both subdirectories to the outer one, where __NELITE.PRJ__ is
-- go through all the .PDS files and correct __incbin__ file references to relative ones e.g. __CFAC6OBJ.DAT__ should be<br>
-__NIEL1\CFAC6OBJ.DAT__, __C:\PDS\JOEL1\NTSCTOK.dat__ -> __JOEL1\NTSCTOK.dat__, __\PDS\JOEL1\WORDSD.DAT__ -> __JOEL1\WORDSD.DAT__<br>
+- go through all the .PDS files and correct __incbin__ file references to relative ones e.g.<br>
+__CFAC6OBJ.DAT__ should be __NIEL1\CFAC6OBJ.DAT__<br>
+__C:\PDS\JOEL1\NTSCTOK.dat__ -> __JOEL1\NTSCTOK.dat__<br>
+__\PDS\JOEL1\WORDSD.DAT__ -> __JOEL1\WORDSD.DAT__<br>
 they are in 8 files in total and all the references from each file are to one of subdirectories, i.e. paths dont mix<br>
 - examine __NELITE.PRJ__ and note the file order, we will try to replicate it<br>
 0) <br>
@@ -244,9 +248,11 @@ the first one is on the line __452__, add __,6__ at the end of it<br>
 - add __,6__ to the end of line __465__ and __474__
 - continue searching for __SMARTJMP__ and adding values __5,4,4,3,6,1,3,1,6,1,1,1,3,3,4,6,6,4,6,0,0,3__<br>
 until youll come to a commented out __SENDPALLETE SMARTJMP SENDPALLETEtrue__ line; let's ignore this one
-- continue down adding: __3,3,3,6,3,6,6,3,3,6,0,5,5__ until __GETPWRFACE SMARTJMP3 GETPWRFACEtrue__, which should be ignored
+- continue down adding: __3,3,3,6,3,6,6,3,3,6,0,5,5__ until __GETPWRFACE SMARTJMP3 GETPWRFACEtrue__<br>
+which should be ignored
 - add seven more parameters __4,4,6,6,0,6,6__ and ignore commented out __NOISE SMARTJMP3 NOISEtrue__
-- supply two more parameters __6,6__ for macros and ignore __BOXINPUT SMARTJMP2 BOXINPUTtrue__ excluded with __IF__ directive
+- supply two more parameters __6,6__ for macros and ignore __BOXINPUT SMARTJMP2 BOXINPUTtrue__<br>
+excluded with __IF__ directive
 - continue adding from __GTNME__ __6,6,6,6,0,2,2,2,3,3,3,3,3,3,3,3,3,0,6,0,1,2,2,2,2,0,0,1,3,1,0__ up until __ENDTMODEsmart__<br>
 take care to add the parameter before the comment on the line __631__<br>
 - the game should now compile, producing 8 output files
