@@ -6,7 +6,8 @@ So please don't even think about directly feeding it your original sources from 
 <br>
 ### Some examples, from easy to more finicky:
 CPC __Dizzy 3__ (https://github.com/Wireframe-Magazine/Wireframe19)
-- compile for __amstrad__ with __PDSZ80f.EXE__ to get __AA__ or with __PDSZ80c.EXE__ on __DOSBox-X__ to get serial output __ser2.bin__
+- compile for __amstrad__ with __PDSZ80f.EXE__ to get __AA__ or with __PDSZ80c.EXE__ on __DOSBox-X__<br>
+to get serial output __ser2.bin__
 - unpack it to __0bank0.bin__ with __pds2rom.exe aa__
 - use __CaPriCe Forever__
 - set breakpoint: __&0dfb__
@@ -40,7 +41,8 @@ ZX __Street Cred Football__ (https://spectrumcomputing.co.uk/forums/viewtopic.ph
 <br>
 
 C64 __Altered Beast Intro__ (https://github.com/milkeybabes?tab=repositories)
-- compile x?.tap files with __PDS6502f.EXE__ to get __AA__ or with __PDS6502c.EXE__ on __DOSBox-X__ to get serial output __ser2.bin__
+- compile x?.tap files with __PDS6502f.EXE__ to get __AA__ or with __PDS6502c.EXE__ on __DOSBox-X__<br>
+to get serial output __ser2.bin__
 - unpack it to __0bank0.bin__ with __pds2rom.exe aa__
 - prepend rom with 2 bytes and remove last 2: <- C64 emulator quirk<br>
 __sfk partcopy 0bank0.bin -yes -fromto 0 2 addr.bin__<br>
@@ -55,7 +57,8 @@ __g 9837__<br>
 <br>
 
 C64 __Alien 3__ (https://github.com/milkeybabes?tab=repositories)
-- compile __EFFECTS.PDS__ with __PDS6502f.EXE__ to get __AA__ or with __PDS6502c.EXE__ on __DOSBox-X__ to get serial output __ser2.bin__
+- compile __EFFECTS.PDS__ with __PDS6502f.EXE__ to get __AA__ or with __PDS6502c.EXE__ on __DOSBox-X__<br>
+to get serial output __ser2.bin__
 - process it as Intro above (with 2 extra zero bytes) and you should have __effects.prg__
 - open 0-7.PDS in PDS and set __TAPE_LOADER__ to 0 and uncomment __START_CODE__ at the end of 7th window
 - try to compile and get an error about a missing gfx file
