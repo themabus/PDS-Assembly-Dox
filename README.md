@@ -239,7 +239,8 @@ and paste it at the end of __5.PDS__<br>
 7)
 - __move NELITEZ.PDS 7.PDS__<br><br>
 if you'd try to compile now, PDS will complain about a syntax error in __NELITEL1.PDS__<br>
-we'll have to modify some macros to compensate for the missing bank reference functionality of the older program version<br>
+we'll have to modify some macros to compensate for the missing bank reference functionality<br>
+of the older program version we're using<br>
 - find and replace all 6 instances of __#|@1__ with __#@2__
 - also in __NELITEL1.PDS__ replace __#|TT66__ with __#0__ and __#|LL145__ with __#1__
 - now we should supply a 2nd parameter to every instance of 1 of 4 __SMARTJMP__ macros we just modified<br>
