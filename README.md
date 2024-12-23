@@ -282,6 +282,8 @@ __copy /b header +out6.bin +out1.bin +out2.bin +out3.bin +out0.bin +out4.bin +ou
 ### Oh No! More PDS:
 - __Buggy Boy__ (ZX)<br>
 https://web.archive.org/web/20031209144200/http://maz.spork.dk/src/index.html
+- __Wacky Races__ (C64)<br>
+https://www.gamesthatwerent.com/gtw64/wacky-races-v1/
 - __Jeroen Tel's music__ (SMS)<br>
 https://www.smspower.org/forums/12696-JeroenTelSourceCode
 - __Super Robin Hood__ (NES)<br>
