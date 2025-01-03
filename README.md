@@ -178,6 +178,7 @@ __copy /b header +out0.bin +out1.bin +tmp1.bin tank.nes__<br>
 NES __Elite__ (http://www.elitehomepage.org/archive/index.htm)<br>
 UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with __The Lion King__ source code,<br>
 so now assembling this game is as easy as correcting paths in __NELITE.PRJ, ELITEA1.PDS, NELITEJ.PDS, NELITEZ.PDS__ <br>
+and adding the 16 byte ROM header to the output file<br>
 I'm keeping the old conversion guide below for the reference<br>
 <br>
 same as with the __NES Tank Game__ this is a PDS/2 project so we should take care to downconvert it to PDS<br>
