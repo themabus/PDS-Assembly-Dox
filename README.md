@@ -1,4 +1,5 @@
 # PDS-Assembly-Dox
+This is a quick assembly guide for the 80s/90s source codes written using Programmers Development System (PDS).
 ### CAUTION!
 It appears that on some occasions an error message about insufficient __FILES__ in __CONFIG.SYS__ may appear, 
 when saving the files from PDS editor, resulting in the erasure of the content of those files.
@@ -175,6 +176,10 @@ __copy /b header +out0.bin +out1.bin +tmp1.bin tank.nes__<br>
 <br>
 
 NES __Elite__ (http://www.elitehomepage.org/archive/index.htm)<br>
+UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with __The Lion King__ source code,<br>
+so now assembling this game is as easy as correcting paths in __NELITE.PRJ, ELITEA1.PDS, NELITEJ.PDS, NELITEZ.PDS__ <br>
+I'm keeping the old conversion guide below for the reference<br>
+<br>
 same as with the __NES Tank Game__ this is a PDS/2 project so we should take care to downconvert it to PDS<br>
 PDS can load up to 8 files of a limited size; loops can not be used in include files; includes can not be nested<br>
 - first move all .PDS files from both subdirectories to the outer one, where __NELITE.PRJ__ is
@@ -290,6 +295,8 @@ https://www.smspower.org/forums/12696-JeroenTelSourceCode
 https://github.com/Wireframe-Magazine/Wireframe-34
 - __Chicken Run__ (GBC) with GB PDS<br>
 https://archive.org/details/chicken-run-gbc-source-code-sep-7-2000
+- __The Lion King__ (GB/NES) with GB & NES PDS<br>
+https://hiddenpalace.org/Assets/The_Lion_King/Game_Boy_and_NES_source_code
 - x86 __PDS for Konix Multi-system__<br>
 http://www.konixmultisystem.co.uk/index.php?id=downloads<br>
 https://www.youtube.com/watch?v=kicsmgNn-VQ
