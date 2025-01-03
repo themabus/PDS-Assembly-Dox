@@ -297,7 +297,7 @@ https://github.com/Wireframe-Magazine/Wireframe-34
 https://archive.org/details/chicken-run-gbc-source-code-sep-7-2000
 - __The Lion King__ (GB/NES) with GB & NES PDS<br>
 https://hiddenpalace.org/Assets/The_Lion_King/Game_Boy_and_NES_source_code
-- x86 __PDS for Konix Multi-system__<br>
+- __x86 PDS for Konix Multi-system__<br>
 http://www.konixmultisystem.co.uk/index.php?id=downloads<br>
 https://www.youtube.com/watch?v=kicsmgNn-VQ
 <br>
@@ -312,5 +312,5 @@ but just send to either COMPUTER1/2 or SERIAL and everything should go to file<b
 * older PDSZ80 projects appear to compile well with P2Z80<br>
 * P2Z80 has additional __SEND ROMFILE,file.ext,128__ & __SEND ROM__ commands discussed here:<br>
 https://worldofspectrum.org/forums/discussion/9588/
-* if you have other versions of PDS, particularly PDS/2 for 6502<br>
+* if you have other versions of PDS, particularly PDS/2 for Z80 v2.72 / 6502 v2.73 (or above)<br>
 please upload them on archive.org or github or some other public place<br>
