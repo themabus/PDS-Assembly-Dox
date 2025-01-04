@@ -1,5 +1,6 @@
 # PDS-Assembly-Dox
-This is a quick assembly guide for the 80s/90s source codes written using Programmers Development System (PDS).
+This is a quick assembly guide for the 80s/90s source codes written using Z80/6502 Programmers Development System (PDS)<br>
+running the cross-assembler on DOS emulator without the hardware interface board.<br>
 ### CAUTION!
 It appears that on some occasions an error message about insufficient __FILES__ in __CONFIG.SYS__ may appear, 
 when saving the files from PDS editor, resulting in the erasure of the content of those files.
@@ -145,6 +146,12 @@ __copy /b header +tmp.bin hq.nes__<br>
 <br>
 
 NES __NES Tank Game__ (http://www.iancgbell.clara.net/nestank/)<br>
+```diff
+UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with The Lion King source code,
+so now assembling this game with it is as easy as filling the .PRJ project file with the file sequence below
+and adding the 16 byte ROM header to the output TANK.ROM file
+I'm keeping the old conversion guide below for the reference
+```
 this game was produced on 6502 PDS/2 and since it is currently MIA we'll have to sqeeze it into an PDS project<br>
 - rename following files:<br>
 __move BZLINE.PDS 1.PDS__<br>
@@ -176,11 +183,12 @@ __copy /b header +out0.bin +out1.bin +tmp1.bin tank.nes__<br>
 <br>
 
 NES __Elite__ (http://www.elitehomepage.org/archive/index.htm)<br>
-UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with __The Lion King__ source code,<br>
-so now assembling this game is as easy as correcting paths in __NELITE.PRJ, ELITEA1.PDS, NELITEJ.PDS, NELITEZ.PDS__ <br>
-and adding the 16 byte ROM header to the output file<br>
-I'm keeping the old conversion guide below for the reference<br>
-<br>
+```diff
+UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with The Lion King source code,
+so now assembling this game with it is as easy as correcting paths in NELITE.PRJ, ELITEA1.PDS, NELITEJ.PDS, NELITEZ.PDS
+and adding the 16 byte ROM header to the output ELTPAL52.ROM file
+I'm keeping the old conversion guide below for the reference
+```
 same as with the __NES Tank Game__ this is a PDS/2 project so we should take care to downconvert it to PDS<br>
 PDS can load up to 8 files of a limited size; loops can not be used in include files; includes can not be nested<br>
 - first move all .PDS files from both subdirectories to the outer one, where __NELITE.PRJ__ is
@@ -311,7 +319,7 @@ to amend this I provided modified __f__ exe versions<br>
 it is better to not specify this MSDOS output with those hacked versions<br>
 but just send to either COMPUTER1/2 or SERIAL and everything should go to file<br>
 * older PDSZ80 projects appear to compile well with P2Z80<br>
-* P2Z80 has additional __SEND ROMFILE,file.ext,128__ & __SEND ROM__ commands discussed here:<br>
+* PDS2 has additional __SEND ROMFILE,file.ext,128__ & __SEND ROM__ commands discussed here:<br>
 https://worldofspectrum.org/forums/discussion/9588/
-* if you have other versions of PDS, particularly PDS/2 for Z80 v2.72 / 6502 v2.73 (or above)<br>
+* if you have other versions of PDS, particularly 6502 PDS v1.26, PDS/2 for Z80 v2.72 / 6502 v2.73 (or above)<br>
 please upload them on archive.org or github or some other public place<br>
