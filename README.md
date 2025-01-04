@@ -1,5 +1,5 @@
 # PDS-Assembly-Dox
-This is a quick assembly guide for the 80s/90s source codes written using Z80/6502 Programmers Development System (PDS)<br>
+This is a quick assembly guide for the 80s/90s source codes written using Programmers Development System (PDS)<br>
 running the cross-assembler on DOS emulator without the hardware interface board.<br>
 ### CAUTION!
 It appears that on some occasions an error message about insufficient __FILES__ in __CONFIG.SYS__ may appear, 
