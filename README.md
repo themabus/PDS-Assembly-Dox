@@ -147,7 +147,7 @@ __copy /b header +tmp.bin hq.nes__<br>
 
 NES __NES Tank Game__ (http://www.iancgbell.clara.net/nestank/)<br>
 ```diff
-UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with The Lion King source code,
+UPDATE: on the 1st day of 2025 Hidden Palace community shared NES PDS2 along with The Lion King source code,
 so now assembling this game with it is as easy as filling the .PRJ project file with the file sequence below
 and adding the 16 byte ROM header to the output TANK.ROM file
 I'm keeping the old conversion guide below for the reference
@@ -184,7 +184,7 @@ __copy /b header +out0.bin +out1.bin +tmp1.bin tank.nes__<br>
 
 NES __Elite__ (http://www.elitehomepage.org/archive/index.htm)<br>
 ```diff
-UPDATE: on the 1st day of 2025 Hidden Place community shared NES PDS2 along with The Lion King source code,
+UPDATE: on the 1st day of 2025 Hidden Palace community shared NES PDS2 along with The Lion King source code,
 so now assembling this game with it is as easy as correcting paths in NELITE.PRJ, ELITEA1.PDS, NELITEJ.PDS, NELITEZ.PDS
 and adding the 16 byte ROM header to the output ELTPAL52.ROM file
 I'm keeping the old conversion guide below for the reference
@@ -306,8 +306,11 @@ https://github.com/Wireframe-Magazine/Wireframe-34
 https://archive.org/details/chicken-run-gbc-source-code-sep-7-2000
 - __The Lion King__ (GB/NES) with GB & NES PDS<br>
 https://hiddenpalace.org/Assets/The_Lion_King/Game_Boy_and_NES_source_code
+- __Dave Lowe's mostly audio stuff__ (GG/C64)<br>
+https://archive.org/details/@dave_lowe_disk_archive
 - __x86 PDS for Konix Multi-system__<br>
 http://www.konixmultisystem.co.uk/index.php?id=downloads<br>
+https://github.com/orgs/Konix-Multisystem/repositories<br>
 https://www.youtube.com/watch?v=kicsmgNn-VQ
 <br>
 
