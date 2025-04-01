@@ -314,7 +314,7 @@ https://github.com/orgs/Konix-Multisystem/repositories<br>
 https://www.youtube.com/watch?v=kicsmgNn-VQ
 <br>
 
-* PDS6502.EXE was kindly provided by CSDb community
+* PDS6502.EXE 'beta' > v1.26 was kindly provided by CSDb community
 * sfk is __Swiss File Knife__ http://stahlworks.com/dev/swiss-file-knife.html
 * PDS has a built in __SEND MSDOS,file.ext__ command for output to file<br>
 but it has a problem with multi bank output overwriting itself<br>
@@ -324,5 +324,5 @@ but just send to either COMPUTER1/2 or SERIAL and everything should go to file<b
 * older PDSZ80 projects appear to compile well with P2Z80<br>
 * PDS2 has additional __SEND ROMFILE,file.ext,128__ & __SEND ROM__ commands discussed here:<br>
 https://worldofspectrum.org/forums/discussion/9588/
-* if you have other versions of PDS, particularly 6502 PDS v1.26, PDS/2 for Z80 v2.72 / 6502 v2.73 (or above)<br>
+* if you have other versions of PDS, particularly PDS/2 for Z80 v2.72 (or above) / 6502 v2.73 (or above)<br>
 please upload them on archive.org or github or some other public place<br>
