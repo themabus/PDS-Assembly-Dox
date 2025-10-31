@@ -27,7 +27,7 @@ var
   BankNr	: UInt32 = 0;
   ExecNr	: UInt32 = 0;//execution number - starts new bank and shows as 1st char in file name
   Records	: UInt32 = 1;//records in output array
-  i		: UInt32 = 0;
+  i		: UInt32;
   Copy		: boolean = false;//processing $b4 data block
   Initialized	: boolean = false;//$b7 sets 1st bank or next one?
   VerSet	: boolean = false;//PDS version determined?
@@ -101,17 +101,15 @@ BEGIN
     writeln('File Offset: ' + hexstr(FileOffset, 6) + ' (' +inttostr(FileOffset) + ')');
 
     repeat
-
         if (Copy = false) then begin
+            case Dfin[FileOffset] of
 
-            Case Dfin[FileOffset] of
-
-                $b3 : begin//PADDING BYTE
+                $b3: begin//PADDING BYTE
                     writeln('Padding: ' + hexstr(1, 4) + ' (' +inttostr(1) + ')');
                     FileOffset += 1;
                 end;
 
-                $b7 : begin//SWITCH BANK
+                $b7: begin//SWITCH BANK
                     FileOffset += 1;
                     if (VerSet = false) then begin
                         if (FileOffset+1 < BytesRead) 
@@ -119,14 +117,11 @@ BEGIN
                           then Ver2 := true;
                         VerSet := true;
                     end;
-                    //PDS2
-                    if Ver2 then begin
-                        BankNr := Dfin[FileOffset];
+                    BankNr := Dfin[FileOffset];
+                    if Ver2 then begin//PDS2
                         FileOffset += 1;
                         BankNr += Dfin[FileOffset] << 8;
-                    end
-                    //PDS
-                    else BankNr := Dfin[FileOffset];
+                    end;
                     writeln('Bank:    ' + hexstr(BankNr, 4) + ' (' +inttostr(BankNr) + ')');
                     FileOffset += 1;
                     if (FileOffset = BytesRead) then break;//last command - bail
@@ -135,10 +130,15 @@ BEGIN
                         Records += 1;
                         BankPrep;
                     end;
+                    if (Records>1) then begin//hacking around matching file names, when returning to previously processed bank
+                      for i:=0 to Records-2 do begin
+                        if BankName[i] = IntToStr(ExecNr)+'bank'+IntToStr(BankNr)+'.bin' then ExecNr+=1;
+                      end;
+                    end;
                     BankName[Records-1] := IntToStr(ExecNr)+'bank'+IntToStr(BankNr)+'.bin';
                 end;
 
-                $b5 : begin//EXECUTE
+                $b5: begin//EXECUTE
                     FileOffset += 1;
                     BlockAddr := Dfin[FileOffset] << 8;
                     FileOffset += 1;
@@ -156,7 +156,7 @@ BEGIN
                     BankName[Records-1] := IntToStr(ExecNr)+'bank'+IntToStr(BankNr)+'.bin';
                 end;
 
-                $b4 : begin//SEND
+                $b4: begin//SEND
                     FileOffset += 1;
                     BlockAddr := Dfin[FileOffset] << 8;
                     FileOffset += 1;
@@ -177,7 +177,6 @@ BEGIN
                     writeln('error:   couldn''t find control!');
                     halt(3);
                 end;
-
             end;
         end;
 
@@ -191,7 +190,6 @@ BEGIN
                 if (FileOffset < BytesRead) then writeln('File Offset: ' + hexstr(FileOffset, 6) + ' (' +inttostr(FileOffset) + ')');
             end;
         end;
-
     until FileOffset >= BytesRead;
 
     if (BlockSize > 0) then begin
@@ -199,6 +197,7 @@ BEGIN
         halt(2);
     end;
 
+    i := 0;
     while (i < Records) do begin
 //        writeln(BankName[i]);
         fout:=TFileStream.Create(BankName[i], fmCreate);
@@ -207,7 +206,7 @@ BEGIN
     end
 ////////////////////////////////////////////////////////////////////////////////
   except
-    on E: Exception do Help;
+    on e: exception do writeln(e.message);
   end;
   finally
     fin.free;
