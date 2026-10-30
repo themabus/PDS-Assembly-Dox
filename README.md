@@ -326,3 +326,5 @@ but just send to either COMPUTER1/2 or SERIAL and everything should go to file<b
 https://worldofspectrum.org/forums/discussion/9588/
 * if you have other versions of PDS, particularly PDS/2 for Z80 v2.72 (or above) / 6502 v2.73 (or above)<br>
 please upload them on archive.org or github or some other public place<br>
+* some video tutorials here:<br>
+https://www.youtube.com/@SuperAwesomeGames
